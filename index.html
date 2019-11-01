@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./index.css">
+    <title>Document</title>
+</head>
+<body>
+    <ul class="bigBox"></ul>
+</body>
+
+    <script>
+        let box = document.querySelector('.bigBox');
+    
+        let content = "这些人又极其狠毒，有天来了一个附近村子里，有精神障碍的一个人，其实这个人经常来，每次他们都要狠狠的耍笑一番，而这次他喝醉了酒，就在船港上发了酒疯，其实也没什么，这个时候是晚上，也没有游客，但是这些人突然起了恶念，要把这个可怜的人打一顿，甚者有的保安要看看在不在监控摄像头之内，想把这个可怜人丢进湖里，好在有附近村民遛弯发现，才免了不幸";
+        let con1 = "点击收起";
+        let con2 = "查看更多";
+        let str = `
+            <li class="sonbox">${content}
+                <div class="close">${con1}</div>
+            </li>
+            <div class="text">${con2}</div>
+        `
+        box.innerHTML = str;
+
+        let btn1 = document.querySelector('.text');
+        let sonbox = document.querySelector('.sonbox');
+        let text = document.querySelector('.text');
+        let close = document.querySelector('.close');
+        btn1.onclick=()=>{
+            text.style.opacity = 0;
+            sonbox.classList.add('sonbox1');
+            close.classList.remove('close');
+            close.classList.add('close1');
+        }
+        close.onclick=()=>{
+            text.style.opacity = 1;
+            sonbox.classList.remove('sonbox1');
+            close.classList.remove('close1');
+        }
+    </script>
+
+</html>
